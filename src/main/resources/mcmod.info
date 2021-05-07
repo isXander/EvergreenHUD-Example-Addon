@@ -1,7 +1,7 @@
 [
 {
-  "modid": "modid",
-  "name": "isXander's  Mod",
+  "modid": "evergreenaddon",
+  "name": "Example Evergreen Addon",
   "description": "",
   "version": "${version}",
   "mcversion": "${mcversion}",
