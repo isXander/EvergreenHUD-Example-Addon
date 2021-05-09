@@ -1,8 +1,8 @@
 package co.uk.isxander.exampleaddon;
 
+import co.uk.isxander.evergreenhud.EvergreenHUD;
 import co.uk.isxander.evergreenhud.addon.AddonMeta;
 import co.uk.isxander.evergreenhud.addon.EvergreenAddon;
-import co.uk.isxander.evergreenhud.elements.ElementType;
 import co.uk.isxander.exampleaddon.elements.ExampleElement;
 
 public class ExampleAddon extends EvergreenAddon {
@@ -13,7 +13,7 @@ public class ExampleAddon extends EvergreenAddon {
 
     @Override
     public void init() {
-        ElementType.instance.registerElement("EXAMPLE_ELEMENT", ExampleElement.class);
+        EvergreenHUD.getInstance().getElementManager().registerElement("EXAMPLE_ELEMENT", ExampleElement.class);
     }
 
     @Override
