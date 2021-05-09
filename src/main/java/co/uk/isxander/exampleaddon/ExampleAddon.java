@@ -5,7 +5,6 @@ import co.uk.isxander.evergreenhud.addon.EvergreenAddon;
 import co.uk.isxander.evergreenhud.elements.ElementType;
 import co.uk.isxander.exampleaddon.elements.ExampleElement;
 
-@Mod(modid = "evergreenexampleaddon", name = ExampleAddon.NAME, version = ExampleAddon.VERSION, dependencies = "required-after:evergreenhud", clientSideOnly = true)
 public class ExampleAddon extends EvergreenAddon {
 
     public static final String NAME = "Example Addon";
