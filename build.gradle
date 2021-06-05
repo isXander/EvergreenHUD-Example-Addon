@@ -15,14 +15,19 @@ buildscript {
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
 
-version = "1.0"
+version = mod_version
 group = "co.uk.isxander"
-archivesBaseName = "evergreenaddon"
+archivesBaseName = mod_id
 
 minecraft {
     version = "1.8.9-11.15.1.2318-1.8.9"
     runDir = "run"
     mappings = "stable_22"
+
+    replace('${GRADLE_MOD_ID}', mod_id)
+    replace('${GRADLE_MOD_NAME}', mod_name)
+    replace('${GRADLE_MOD_DESCRIPTION}', mod_description)
+    replace('${GRADLE_MOD_VERSION}', mod_version)
 }
 
 dependencies {
@@ -32,11 +37,21 @@ dependencies {
 processResources {
     inputs.property "version", project.version
     inputs.property "mcversion", project.minecraft.version
+    inputs.property 'name', mod_name
+    inputs.property 'modid', mod_id
+    inputs.property 'description', mod_description
 
     from(sourceSets.main.resources.srcDirs) {
         include 'mcmod.info'
 
-        expand 'version':project.version, 'mcversion':project.minecraft.version
+        expand (
+                'version':project.version,
+                'mcversion':project.minecraft.version,
+                'name':mod_name,
+                'modid': mod_id,
+                'description':mod_description
+        )
+
     }
 
     from(sourceSets.main.resources.srcDirs) {

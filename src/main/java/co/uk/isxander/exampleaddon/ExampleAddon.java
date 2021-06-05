@@ -7,9 +7,10 @@ import co.uk.isxander.exampleaddon.elements.ExampleElement;
 
 public class ExampleAddon extends EvergreenAddon {
 
-    public static final String NAME = "Example Addon";
-    public static final String DESCRIPTION = "A cool example EvergreenHUD addon!";
-    public static final String VERSION = "1.0";
+    public static final String MOD_ID = "${GRADLE_MOD_ID}";
+    public static final String MOD_NAME = "${GRADLE_MOD_NAME}";
+    public static final String MOD_DESCRIPTION = "${GRADLE_MOD_DESCRIPTION}";
+    public static final String MOD_VERSION = "${GRADLE_MOD_VERSION}";
 
     @Override
     public void init() {
@@ -18,7 +19,7 @@ public class ExampleAddon extends EvergreenAddon {
 
     @Override
     public AddonMeta metadata() {
-        return new AddonMeta(NAME, DESCRIPTION, VERSION);
+        return new AddonMeta(MOD_NAME, MOD_DESCRIPTION, MOD_VERSION);
     }
 
 }
